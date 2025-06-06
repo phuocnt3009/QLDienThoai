@@ -1,17 +1,7 @@
 <?php
 require 'config.php';
-
-// Kiểm tra nếu người dùng đã đăng nhập
-if (isset($_SESSION['user'])) {
-    // Đăng xuất: Xóa tất cả dữ liệu phiên
-    $_SESSION = [];
-    session_destroy();
-    // Khởi tạo lại phiên để hiển thị thông báo
-    session_start();
-} else {
-    // Khởi tạo biến thông báo
-    $tb = '';
-}
+// Khởi tạo biến thông báo
+$tb = '';
 
 // Xử lý form đăng nhập
 if (isset($_POST['login'])) {
