@@ -1,5 +1,5 @@
 <?php
-require ('../config.php');
+require ('../../config.php');
 
 // Kiểm tra đăng nhập và vai trò
 if (!isset($_SESSION['user']) || !in_array($_SESSION['user']['VaiTro'], ['AD', 'NV'])) {
@@ -144,9 +144,9 @@ mysqli_close($conn);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý sản phẩm</title>
-    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../Content/Style.css">
+    <link rel="stylesheet" href="../../Content/Style.css">
 </head>
 <body>
     <!-- Header -->
@@ -179,7 +179,7 @@ mysqli_close($conn);
                             <div class="icon" style="color: black">Quản lý người dùng</div>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Order/order.php">
+                        <a class="dropdown-item" href="../Order/order.php">
                             <div class="icon" style="color: black">Quản lý đơn hàng</div>
                         </a>
                     </div>
@@ -203,7 +203,7 @@ mysqli_close($conn);
     </div>
 
     <!-- Phần tìm kiếm sản phẩm -->
-    <div class="container mt-4 mx-auto" style="width: 830px">
+    <div class="container mt-4 mx-auto" style="width: 60%">
         <div class="card shadow-lg pb-4">
             <div class="card-header brand-header text-center">
                 Tìm kiếm sản phẩm
@@ -338,7 +338,7 @@ mysqli_close($conn);
                                     <td><?php echo $sp['MaSP']; ?></td>
                                     <td><?php echo $sp['TenSP']; ?></td>
                                     <td>
-                                        <img src="../Images/SanPham/<?php echo $sp['AnhBia']; ?>" 
+                                        <img src="../../Images/SanPham/<?php echo $sp['AnhBia']; ?>" 
                                                 class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
                                     </td>
                                     <td><?php echo number_format($sp['GiaBan'], 0, ',', '.'); ?> đ</td>
